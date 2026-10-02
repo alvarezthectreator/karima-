@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171915">
+  <meta name="description" content="Cuisine Efficace brings exquisite French cuisine with an African twist to private events, corporate gatherings and offshore catering in Lagos, Nigeria.">
+  <title>Cuisine Efficace | Exceptional Catering, Lagos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #20221d;
+      --dark: #171915;
+      --cream: #f6f3ec;
+      --paper: #eeeadf;
+      --accent: #555;
+      --muted: #77786e;
+      --line: rgba(32, 34, 29, .17);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font: 400 15px/1.7 var(--sans); }
+    .hero, .services, .contact, .credentials-band { --accent: #d4d4d4; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 56px)); margin-inline: auto; }
+    .eyebrow { margin: 0 0 18px; color: var(--accent); font-size: 10px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
+    .serif { font-family: var(--serif); font-weight: 400; }
+    .section-title { margin: 0; font: 400 clamp(38px, 5vw, 62px)/1.08 var(--serif); letter-spacing: -.035em; }
+    .section-copy { max-width: 510px; color: var(--muted); }
+    .button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; gap: 18px; padding: 0 23px; border: 1px solid var(--accent); color: var(--dark); font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; transition: background .25s, color .25s, transform .25s; }
+    .button:hover { transform: translateY(-2px); background: var(--accent); color: white; }
+    .button-light { color: var(--cream); }
+    .button-light:hover { color: var(--dark); }
+    .topbar { --accent: #ededed; position: absolute; z-index: 5; inset: 0 0 auto; color: white; }
+    .nav { min-height: 88px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.24); }
+    .brand { display: flex; align-items: center; gap: 12px; font: 500 17px var(--serif); letter-spacing: .11em; text-transform: uppercase; white-space: nowrap; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--accent); color: var(--accent); font: italic 20px var(--serif); }
+    .nav-links { display: flex; align-items: center; gap: clamp(18px, 3vw, 38px); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    .nav-links a:not(.button) { opacity: .85; transition: color .2s; }
+    .nav-links a:not(.button):hover { color: var(--accent); }
+    .nav .button { min-height: 43px; padding-inline: 17px; }
+    .menu-toggle { display: none; border: 0; color: white; background: transparent; font: 11px var(--sans); letter-spacing: .13em; text-transform: uppercase; }
+    .hero { min-height: 760px; min-height: min(850px, 100svh); position: relative; display: flex; align-items: center; overflow: hidden; color: white; background: #292b25 url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=2200&q=88') center 56%/cover; }
+    .hero-video { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+    .hero::before { content: ''; position: absolute; z-index: 1; inset: 0; background: linear-gradient(90deg, rgba(13,15,12,.78) 0%, rgba(13,15,12,.53) 49%, rgba(13,15,12,.12) 100%), linear-gradient(0deg, rgba(13,15,12,.22), transparent 42%); pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; padding-top: 60px; }
+    .hero .eyebrow { color: #ededed; }
+    .hero h1 { max-width: 820px; margin: 0 0 25px; font: 400 clamp(58px, 9vw, 112px)/.99 var(--serif); letter-spacing: -.055em; }
+    .hero h1 em { color: #ededed; font-weight: 400; }
+    .hero-copy { max-width: 475px; margin: 0 0 34px; color: rgba(255,255,255,.8); font-size: 15px; line-height: 1.9; }
+    .hero-foot { position: absolute; z-index: 2; right: max(28px, calc((100vw - 1160px)/2)); bottom: 35px; color: rgba(255,255,255,.68); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; writing-mode: vertical-rl; }
+    .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; align-items: center; padding-block: 128px; }
+    .intro-image { position: relative; min-height: 500px; background: url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=85') center/cover; }
+    .intro-image::after { content: ''; position: absolute; right: -18px; bottom: -18px; width: 48%; height: 45%; border-right: 1px solid var(--accent); border-bottom: 1px solid var(--accent); pointer-events: none; }
+    .intro-copy { padding-block: 22px; }
+    .intro-copy .section-title { max-width: 490px; }
+    .intro-copy p:not(.eyebrow) { margin: 24px 0 29px; }
+    .text-link { display: inline-flex; align-items: center; gap: 14px; padding-bottom: 7px; border-bottom: 1px solid var(--accent); font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .text-link span { color: var(--accent); font-size: 18px; line-height: 10px; }
+    .services { padding-block: 110px 124px; background: var(--dark); color: var(--cream); }
+    .services-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 54px; }
+    .services-head .section-copy { max-width: 340px; margin: 0 0 5px; color: #b5b5aa; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.2); }
+    .service-card { min-height: 260px; padding: 28px 28px 15px 0; border-bottom: 1px solid rgba(255,255,255,.2); }
+    .service-card + .service-card { padding-left: 28px; border-left: 1px solid rgba(255,255,255,.2); }
+    .service-number { color: var(--accent); font: italic 18px var(--serif); }
+    .service-card h3 { margin: 42px 0 11px; font: 400 27px var(--serif); }
+    .service-card p { max-width: 290px; margin: 0; color: #b5b5aa; font-size: 13px; line-height: 1.8; }
+    .signature { display: grid; grid-template-columns: 1fr 1fr; min-height: 610px; }
+    .signature-image { background: url('5910174234422480739.jpg') center/cover; }
+    .signature-copy { display: flex; flex-direction: column; justify-content: center; padding: 90px clamp(40px, 8vw, 130px); background: var(--paper); }
+    .signature-copy .section-title { font-size: clamp(40px, 5vw, 64px); }
+    .signature-copy p:not(.eyebrow) { margin: 25px 0 30px; }
+    .signature-copy .text-link { align-self: flex-start; }
+    .promise { padding-block: 120px; text-align: center; }
+    .promise .section-title { max-width: 770px; margin-inline: auto; }
+    .promise .section-copy { margin: 24px auto 0; }
+    .promise-rule { width: 44px; height: 1px; margin: 31px auto; background: var(--accent); }
+    .gallery { display: grid; grid-template-columns: 1.05fr .95fr 1.2fr; gap: 14px; height: 430px; }
+    .gallery div { background-position: center; background-size: cover; }
+    .gallery div:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80'); }
+    .gallery div:nth-child(2) { margin-top: 42px; background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80'); }
+    .gallery div:nth-child(3) { margin-bottom: 42px; background-image: url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=900&q=80'); }
+    .credential { display: flex; align-items: center; justify-content: center; gap: 28px; margin-top: 82px; padding: 28px 20px; border-block: 1px solid var(--line); text-align: left; }
+    .credential-seal { width: 56px; height: 56px; display: grid; flex: 0 0 auto; place-items: center; border: 1px solid var(--accent); border-radius: 50%; color: var(--accent); font: 22px var(--serif); }
+    .credential p { margin: 0; color: var(--muted); font-size: 12px; }
+    .credential strong { display: block; margin-bottom: 4px; color: var(--ink); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+    .contact { position: relative; padding-block: 105px; overflow: hidden; color: white; background: var(--dark); }
+    .contact::before { content: ''; position: absolute; inset: 0; opacity: .2; background: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1800&q=70') center/cover; }
+    .contact-inner { position: relative; display: grid; grid-template-columns: 1fr .8fr; gap: 10%; align-items: center; }
+    .contact .section-title { max-width: 590px; }
+    .contact .section-copy { color: #b5b5aa; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .contact-note { padding: 24px 28px; border-left: 1px solid var(--accent); color: #c8c6bb; font-size: 13px; }
+    .contact-note strong { display: block; margin-bottom: 7px; color: white; font: 400 21px var(--serif); }
+    .contact-note p { margin: 0; }
+    footer { padding-block: 28px; color: #aaa99f; background: var(--dark); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 22px; font-size: 10px; letter-spacing: .08em; }
+    .footer-inner p { margin: 0; }
+    .topbar { position: fixed; transition: background .35s, box-shadow .35s, backdrop-filter .35s; }
+    .topbar.is-scrolled { background: rgba(23,25,21,.94); box-shadow: 0 8px 32px rgba(0,0,0,.14); backdrop-filter: blur(14px); }
+    .topbar.is-scrolled .nav { min-height: 72px; border-color: rgba(255,255,255,.12); transition: min-height .3s; }
+    .hero::before { animation: heroReveal 1.7s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-content > * { animation: riseIn .85s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-content > :nth-child(2) { animation-delay: .13s; }
+    .hero-content > :nth-child(3) { animation-delay: .24s; }
+    .hero-content > :nth-child(4) { animation-delay: .35s; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .service-card { transition: background .35s, padding .35s; }
+    .service-card:hover { background: rgba(255,255,255,.035); }
+    .gallery div, .intro-image, .signature-image, .occasion-card { overflow: hidden; }
+    .gallery div { transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s; }
+    .gallery div:hover { transform: scale(.98); filter: saturate(1.13); }
+    .experience { padding-block: 108px 116px; background: #e9e4d8; }
+    .experience-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 46px; }
+    .experience-head .section-copy { margin: 0 0 5px; }
+    .occasion-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 15px; }
+    .occasion-card { position: relative; min-height: 380px; display: flex; align-items: end; padding: 25px; color: white; background: var(--dark); isolation: isolate; }
+    .occasion-card::before { content: ''; position: absolute; z-index: -2; inset: 0; background-position: center; background-size: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+    .occasion-card::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(0deg,rgba(12,13,11,.82),transparent 68%); }
+    .occasion-card:hover::before { transform: scale(1.06); }
+    .occasion-card:nth-child(1)::before { background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=85'); }
+    .occasion-card:nth-child(2)::before { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=85'); }
+    .occasion-card:nth-child(3)::before { background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=85'); }
+    .occasion-card small { display: block; margin-bottom: 8px; color: #ededed; font-size: 9px; letter-spacing: .19em; text-transform: uppercase; }
+    .occasion-card h3 { max-width: 300px; margin: 0; font: 400 clamp(24px,3vw,34px)/1.17 var(--serif); }
+    .occasion-card p { max-width: 290px; margin: 11px 0 0; color: rgba(255,255,255,.76); font-size: 12px; }
+    .ticker { overflow: hidden; border-block: 1px solid var(--line); background: var(--cream); }
+    .ticker-track { width: max-content; display: flex; align-items: center; gap: 30px; padding: 19px 0; animation: marquee 34s linear infinite; }
+    .ticker span { color: #68695f; font: italic 19px var(--serif); white-space: nowrap; }
+    .ticker i { color: var(--accent); font: normal 13px var(--sans); }
+    .process { padding-block: 112px; }
+    .process-head { max-width: 650px; margin-bottom: 48px; }
+    .process-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; }
+    .process-step { padding-top: 20px; border-top: 1px solid var(--accent); }
+    .process-step span { color: var(--accent); font: italic 17px var(--serif); }
+    .process-step h3 { margin: 20px 0 8px; font: 400 24px var(--serif); }
+    .process-step p { max-width: 320px; margin: 0; color: var(--muted); font-size: 13px; }
+    .credentials-band { padding-block: 25px; color: var(--cream); background: #242620; }
+    .credentials-inner { display: flex; justify-content: space-between; gap: 25px; align-items: center; }
+    .credentials-inner p { margin: 0; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+    .credentials-inner span { color: #ededed; }
+    .faq { padding-block: 105px; background: var(--paper); }
+    .faq-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 10%; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { position: relative; padding: 20px 35px 20px 0; cursor: pointer; list-style: none; font: 400 19px var(--serif); }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: '+'; position: absolute; right: 2px; color: var(--accent); font: 300 23px var(--sans); transition: transform .25s; }
+    .faq-list details[open] summary::after { transform: rotate(45deg); }
+    .faq-list details p { max-width: 540px; margin: -2px 25px 20px 0; color: var(--muted); font-size: 13px; }
+    .reveal[data-reveal="left"] { transform: translateX(-48px); }
+    .reveal[data-reveal="right"] { transform: translateX(48px); }
+    .reveal[data-reveal="float"] { transform: translateY(42px) scale(.97); }
+    .reveal[data-reveal].is-visible { opacity: 1; transform: translate(0) scale(1); }
+    .about-detail { padding-block: 112px; background: white; }
+    .about-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 10%; align-items: center; }
+    .about-image { min-height: 540px; position: relative; background: url('IMG_7590.JPG') center 48%/cover; }
+    .about-image::after { content: ''; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid #aaa; z-index: -1; }
+    .about-copy p:not(.eyebrow) { color: var(--muted); }
+    .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+    .about-values div { padding-top: 13px; border-top: 1px solid var(--line); }
+    .about-values strong { display: block; font: 400 20px var(--serif); }
+    .about-values span { color: var(--muted); font-size: 11px; }
+    .testimonials { padding-block: 105px 115px; color: var(--cream); background: #20211e; }
+    .testimonials-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 40px; }
+    .testimonials-head .section-copy { color: #b5b5aa; }
+    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .video-card { min-width: 0; }
+    .video-frame { position: relative; aspect-ratio: 16/9; display: grid; place-items: center; overflow: hidden; background: #111 url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80') center/cover; }
+    .video-frame::before { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg,rgba(0,0,0,.45),rgba(0,0,0,.12)); }
+    .video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .video-play { position: relative; z-index: 1; width: 62px; height: 62px; display: grid; place-items: center; padding-left: 4px; border: 1px solid rgba(255,255,255,.75); border-radius: 50%; color: white; background: rgba(0,0,0,.18); font-size: 18px; }
+    .video-label { position: absolute; z-index: 1; left: 20px; bottom: 17px; color: white; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
+    .video-caption { display: flex; justify-content: space-between; gap: 15px; padding-top: 13px; color: #dbdbd4; font: 400 20px var(--serif); }
+    .video-caption small { color: #aaa99f; font: 10px var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .video-note { margin: 23px 0 0; color: #aaa99f; font-size: 11px; }
+    .gallery-section { padding-block: 105px 112px; }
+    .gallery-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 35px; }
+    .gallery-heading .section-copy { margin-bottom: 5px; }
+    .gallery-mosaic { display: grid; grid-template-columns: 1.1fr .8fr 1fr 1fr; grid-template-rows: 230px 230px; gap: 12px; }
+    .gallery-mosaic figure, .gallery-mosaic a { position: relative; display: block; margin: 0; overflow: hidden; background: #d9d7d0; }
+    .gallery-mosaic figure:first-child, .gallery-mosaic a:first-child { grid-row: span 2; }
+    .gallery-mosaic figure:nth-child(4) { grid-column: span 2; }
+    .gallery-mosaic img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .6s; }
+    .gallery-mosaic figure:hover img { transform: scale(1.06); filter: contrast(1.04); }
+    .gallery-mosaic figcaption, .gallery-mosaic a span { position: absolute; inset: auto 0 0; padding: 35px 14px 13px; color: white; background: linear-gradient(transparent,rgba(0,0,0,.65)); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+    .booking { padding-block: 108px; color: white; background: #171915; }
+    .booking-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 9%; align-items: start; }
+    .booking-intro { position: sticky; top: 120px; }
+    .booking-intro .section-copy { color: #b5b5aa; }
+    .booking-intro ul { padding: 0; margin: 30px 0 0; list-style: none; color: #c4c4bb; font-size: 12px; }
+    .booking-intro li { padding: 10px 0; border-top: 1px solid rgba(255,255,255,.15); }
+    .booking-form { display: grid; grid-template-columns: 1fr 1fr; gap: 19px 16px; }
+    .booking-form label { display: grid; gap: 7px; color: #c9c9c2; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
+    .booking-form label.full { grid-column: 1 / -1; }
+    .booking-form input, .booking-form select, .booking-form textarea { width: 100%; padding: 13px 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 0; outline: 0; color: white; background: rgba(255,255,255,.04); font: 400 13px var(--sans); }
+    .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus { border-color: white; }
+    .booking-form select option { color: var(--ink); }
+    .booking-form textarea { min-height: 120px; resize: vertical; }
+    .booking-form .button { justify-self: start; color: white; background: transparent; cursor: pointer; }
+    .booking-form .button:hover { color: var(--dark); background: white; }
+    .brief-result { display: none; grid-column: 1 / -1; padding: 20px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.05); }
+    .brief-result.is-visible { display: block; }
+    .brief-result p { color: #d0d0c9; font-size: 12px; }
+    .brief-result textarea { min-height: 130px; }
+    .brief-result .button { margin-top: 12px; }
+    .contact-details { display: grid; gap: 14px; margin-top: 28px; }
+    .contact-details a { color: #eee; text-decoration: underline; text-underline-offset: 4px; }
+    @keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes heroReveal { from { opacity: .45; transform: scale(1.08); } to { opacity: 1; transform: scale(1.01); } }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 40px, 600px); }
+      .nav { min-height: 74px; }
+      .brand { font-size: 14px; }
+      .menu-toggle { display: block; cursor: pointer; }
+      .nav-links { display: none; position: absolute; inset: 74px 0 auto; padding: 20px; flex-direction: column; align-items: stretch; gap: 0; background: var(--dark); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 5px; }
+      .nav-links .button { margin-top: 10px; }
+      .hero { min-height: 720px; min-height: min(800px, 100svh); }
+      .hero::before { background-position: 58% center; }
+      .hero h1 { font-size: clamp(58px, 14vw, 92px); }
+      .hero-foot { display: none; }
+      .intro { grid-template-columns: 1fr; gap: 52px; padding-block: 88px; }
+      .intro-image { min-height: 380px; margin-right: 12px; }
+      .services { padding-block: 85px; }
+      .services-head { display: block; }
+      .services-head .section-copy { margin-top: 22px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card, .service-card + .service-card { min-height: 0; padding: 24px 0 28px; border-left: 0; }
+      .service-card h3 { margin-top: 24px; }
+      .signature { grid-template-columns: 1fr; }
+      .signature-image { min-height: 420px; }
+      .signature-copy { padding: 75px max(25px, calc((100vw - 600px)/2)); }
+      .promise { padding-block: 88px; }
+      .gallery { height: 300px; gap: 8px; }
+      .gallery div:nth-child(2) { margin-top: 24px; }
+      .gallery div:nth-child(3) { margin-bottom: 24px; }
+      .credential { justify-content: flex-start; margin-top: 60px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 38px; }
+      .contact { padding-block: 82px; }
+      .experience { padding-block: 82px; }
+      .experience-head { display: block; }
+      .experience-head .section-copy { margin-top: 20px; }
+      .occasion-grid { grid-template-columns: 1fr 1fr; }
+      .occasion-card:first-child { grid-column: 1 / -1; min-height: 340px; }
+      .occasion-card { min-height: 280px; padding: 19px; }
+      .process { padding-block: 85px; }
+      .process-grid { grid-template-columns: 1fr; gap: 28px; }
+      .credentials-inner { flex-direction: column; align-items: flex-start; }
+      .faq { padding-block: 80px; }
+      .faq-layout { grid-template-columns: 1fr; gap: 35px; }
+      .about-detail { padding-block: 82px; }
+      .about-layout { grid-template-columns: 1fr; gap: 42px; }
+      .about-image { min-height: 390px; margin-right: 12px; }
+      .testimonials { padding-block: 82px; }
+      .testimonials-head, .gallery-heading { display: block; }
+      .video-grid { grid-template-columns: 1fr; gap: 30px; }
+      .gallery-section { padding-block: 80px; }
+      .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 180px 180px; }
+      .gallery-mosaic figure:first-child, .gallery-mosaic a:first-child { grid-row: span 1; }
+      .gallery-mosaic figure:nth-child(4) { grid-column: span 1; }
+      .booking-layout { grid-template-columns: 1fr; gap: 40px; }
+      .booking-intro { position: static; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 36px); }
+      .hero { min-height: 690px; }
+      .hero-copy { font-size: 14px; }
+      .gallery { height: 220px; }
+      .footer-inner { flex-direction: column; }
+      .contact-actions { flex-direction: column; align-items: stretch; }
+      .occasion-grid { grid-template-columns: 1fr; }
+      .occasion-card:first-child { grid-column: auto; }
+      .occasion-card { min-height: 300px; }
+      .booking-form { grid-template-columns: 1fr; }
+      .booking-form label.full { grid-column: auto; }
+      .gallery-mosaic { grid-template-rows: 230px 165px 165px; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      .reveal { opacity: 1; transform: none; }
+      .hero-video { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Cuisine Efficace home"><span class="brand-mark">C</span><span>Cuisine Efficace</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+      <nav class="nav-links" id="navigation" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#booking" class="button button-light">Request a quote <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=2200&q=88" aria-hidden="true" tabindex="-1">
+        <source src="Video-56323.mp4" type="video/mp4">
+      </video>
+      <div class="wrap hero-content">
+        <p class="eyebrow">Lagos · Nigeria · Exceptional catering</p>
+        <h1 class="serif">A taste of<br><em>two worlds.</em></h1>
+        <p class="hero-copy">Exquisite French cuisine with an African twist. Thoughtfully prepared for refinery-scale milestones, executive hospitality and private celebrations where every detail matters.</p>
+        <a class="button button-light" href="#contact">Plan your occasion <span aria-hidden="true">↗</span></a>
+      </div>
+      <span class="hero-foot">Private dining · Events · Offshore</span>
+    </section>
+
+    <section class="wrap intro reveal" id="story">
+      <div class="intro-image" role="img" aria-label="Elegant event table setting"></div>
+      <div class="intro-copy">
+        <p class="eyebrow">The Cuisine Efficace experience</p>
+        <h2 class="section-title">Distinctive flavours.<br><em>Considered in every detail.</em></h2>
+        <p class="section-copy">Cuisine Efficace brings the elegance of French cooking together with the warmth and character of African flavours. From intimate celebrations to large-scale service, we create a considered experience around your guests and your vision.</p>
+        <a class="text-link" href="services.html">Discover our services <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="about-detail" id="about">
+      <div class="wrap about-layout">
+        <div class="about-image reveal" data-reveal="left" role="img" aria-label="A chef preparing a carefully composed meal"></div>
+        <div class="about-copy reveal" data-reveal="right">
+          <p class="eyebrow">About Cuisine Efficace</p>
+          <h2 class="section-title">Hospitality with<br><em>purpose and presence.</em></h2>
+          <p>Based in Lagos, Cuisine Efficace brings exquisite French cuisine together with an African twist. Our work spans private celebrations, corporate events and offshore catering, with an emphasis on thoughtful menus and attentive service.</p>
+          <p>We believe every event deserves its own point of view. We listen closely, shape the experience around your brief and take care with the details that make guests feel welcome.</p>
+          <div class="about-values"><div><strong>Personalised</strong><span>Built around your occasion</span></div><div><strong>Professional</strong><span>Prepared for service at scale</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services reveal" id="services">
+      <div class="wrap">
+        <div class="services-head">
+          <div><p class="eyebrow">Made for your moment</p><h2 class="section-title">Catering, with<br><em>quiet confidence.</em></h2></div>
+          <p class="section-copy">A tailored approach to hospitality, wherever your occasion takes place.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><span class="service-number">01</span><h3>Private celebrations</h3><p>Personal menus and polished service for the milestones you want to remember.</p></article>
+          <article class="service-card"><span class="service-number">02</span><h3>Corporate hospitality</h3><p>Thoughtful catering for business gatherings, executive dining and company events.</p></article>
+          <article class="service-card"><span class="service-number">03</span><h3>Offshore catering</h3><p>Reliable catering services for offshore operations, supported by DPR licence certification.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="occasions">
+      <div class="wrap">
+        <div class="experience-head reveal"><div><p class="eyebrow">Scale, substance, discretion</p><h2 class="section-title">Every occasion,<br><em>beautifully handled.</em></h2></div><p class="section-copy">From a landmark company milestone to a candlelit private table, the service adapts to the room, the guest list and the moment.</p></div>
+        <div class="occasion-grid">
+          <article class="occasion-card reveal"><div><small>01 / Corporate & energy</small><h3>Hospitality for landmark milestones.</h3><p>Refinery-scale celebrations, executive receptions, launch events and industry gatherings.</p></div></article>
+          <article class="occasion-card reveal"><div><small>02 / Private occasions</small><h3>Personal, never ordinary.</h3><p>Birthdays, weddings and intimate gatherings tailored to your guests.</p></div></article>
+          <article class="occasion-card reveal"><div><small>03 / Offshore service</small><h3>Dependable beyond the city.</h3><p>Professional catering support for offshore environments and operational teams.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="French cuisine with African influence; corporate, private and offshore catering">
+      <div class="ticker-track" aria-hidden="true"><span>French finesse</span><i>✳</i><span>African soul</span><i>✳</i><span>Exceptional service</span><i>✳</i><span>Made for the moment</span><i>✳</i><span>French finesse</span><i>✳</i><span>African soul</span><i>✳</i><span>Exceptional service</span><i>✳</i><span>Made for the moment</span><i>✳</i></div>
+    </div>
+
+    <section class="signature reveal" id="cuisine">
+      <div class="signature-image" role="img" aria-label="Beautifully plated dishes in a fine dining setting"></div>
+      <div class="signature-copy">
+        <p class="eyebrow">French technique · African soul</p>
+        <h2 class="section-title">A cuisine that<br>feels like <em>you.</em></h2>
+        <p class="section-copy">Our point of view is rooted in contrast: familiar French finesse, vibrant African influence, and a menu shaped around the occasion. Tell us what you have in mind and we’ll begin with a conversation.</p>
+        <a class="text-link" href="#contact">Start planning <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="wrap promise reveal">
+      <p class="eyebrow">The details matter</p>
+      <h2 class="section-title">Beautiful food is only the beginning.</h2>
+      <div class="promise-rule"></div>
+      <p class="section-copy">From the first menu conversation to the final plate, every element is considered to make hosting feel effortless.</p>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="wrap">
+        <div class="testimonials-head reveal"><div><p class="eyebrow">A word from our guests</p><h2 class="section-title">The moments<br>they <em>remember.</em></h2></div><div><p class="section-copy">Video stories from clients and event partners. We’ll feature approved guest testimonials here.</p><a class="text-link" href="testimonials.html">Explore testimonials <span aria-hidden="true">↗</span></a></div></div>
+        <div class="video-grid">
+          <article class="video-card reveal" data-reveal="float">
+            <div class="video-frame"><video controls preload="none" poster="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80" aria-label="Client testimonial video one"></video><span class="video-label">Client film · coming soon</span></div>
+            <div class="video-caption"><span>Corporate celebration</span><small>Guest story</small></div>
+          </article>
+          <article class="video-card reveal" data-reveal="float">
+            <div class="video-frame"><video controls preload="none" poster="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=80" aria-label="Client testimonial video two"></video><span class="video-label">Client film · coming soon</span></div>
+            <div class="video-caption"><span>A day worth celebrating</span><small>Guest story</small></div>
+          </article>
+        </div>
+        <p class="video-note">Video slots are ready for client-approved footage. Add the supplied video files before publishing; testimonials shown should be genuine and authorised.</p>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="wrap">
+        <div class="gallery-heading reveal"><div><p class="eyebrow">A glimpse of the experience</p><h2 class="section-title">Made to be <em>remembered.</em></h2></div><div><p class="section-copy">Explore dishes and moments from the Cuisine Efficace kitchen.</p><a class="text-link" href="gallery.html">Open the full gallery <span aria-hidden="true">↗</span></a></div></div>
+        <div class="gallery-mosaic">
+          <a class="reveal" data-reveal="float" href="gallery.html#photo-0" aria-label="Open gallery: prawn pasta"><img src="5910174234422480739.jpg" alt="Cuisine Efficace prawn pasta with toasted bread" loading="lazy"><span>Fresh from our kitchen</span></a>
+          <a class="reveal" data-reveal="float" href="gallery.html#photo-1" aria-label="Open gallery: glazed meat"><img src="5910121341900230369.jpg" alt="Glazed meat served with seasonal vegetables" loading="lazy"><span>Considered details</span></a>
+          <a class="reveal" data-reveal="float" href="gallery.html#photo-2" aria-label="Open gallery: prawns"><img src="5909918761177780061.jpg" alt="Prawns with sesame, egg and fresh salad" loading="lazy"><span>Made for sharing</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="credentials-band"><div class="wrap credentials-inner"><p><span>Licensed</span> · DPR certified</p><p>French cuisine <span>×</span> African inspiration</p><p>Lagos · Nigeria <span>·</span> Offshore service</p></div></section>
+
+    <section class="wrap process reveal">
+      <div class="process-head"><p class="eyebrow">An effortless process</p><h2 class="section-title">From first thought<br>to <em>final flourish.</em></h2></div>
+      <div class="process-grid">
+        <article class="process-step"><span>01</span><h3>Tell us the vision</h3><p>Share your date, venue, guest numbers and the feeling you want the event to leave behind.</p></article>
+        <article class="process-step"><span>02</span><h3>We shape the experience</h3><p>We’ll discuss the menu, service style and event requirements with your team.</p></article>
+        <article class="process-step"><span>03</span><h3>Host with confidence</h3><p>Our team works to deliver a polished catering experience, so you can focus on your guests.</p></article>
+      </div>
+    </section>
+
+    <section class="faq reveal">
+      <div class="wrap faq-layout">
+        <div><p class="eyebrow">A few useful details</p><h2 class="section-title">Before we<br><em>begin.</em></h2><p class="section-copy">Every brief is different. Here are a few things to know before you enquire.</p></div>
+        <div class="faq-list">
+          <details><summary>What kinds of events do you cater?</summary><p>Private celebrations, corporate functions, executive hospitality and offshore catering. Share your event brief and we can discuss the right approach.</p></details>
+          <details><summary>Can the menu be tailored to our event?</summary><p>Yes. The menu and service style can be discussed around your occasion, guest profile and event requirements.</p></details>
+          <details><summary>Do you provide offshore catering?</summary><p>Offshore catering is one of Cuisine Efficace’s stated services. Please include the location, duration and operational requirements in your enquiry.</p></details>
+          <details><summary>How do we request a proposal?</summary><p>Message us on Instagram with your date, venue or location, estimated guest count and the service you need. The team can follow up with next steps.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <div class="wrap booking-layout">
+        <div class="booking-intro reveal" data-reveal="left">
+          <p class="eyebrow">Booking & event enquiries</p>
+          <h2 class="section-title">Request a<br><em>bespoke quote.</em></h2>
+          <p class="section-copy">Tell us a little about the event. Your details will be formatted into a brief that you can copy and send to our team on Instagram.</p>
+          <ul><li>Corporate and executive events</li><li>Private celebrations</li><li>Offshore catering enquiries</li></ul>
+        </div>
+        <form class="booking-form reveal" id="quote-form" data-reveal="right">
+          <label>Your name<input name="name" autocomplete="name" required placeholder="Full name"></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <label>Event type<select name="event" required><option value="" disabled selected>Select an event</option><option>Corporate / executive</option><option>Private celebration</option><option>Offshore catering</option><option>Other</option></select></label>
+          <label>Preferred date<input name="date" type="date" required></label>
+          <label>Estimated guests<input name="guests" type="number" min="1" placeholder="Guest count"></label>
+          <label>Event location<input name="location" placeholder="Venue or city"></label>
+          <label class="full">Tell us about your plans<textarea name="details" placeholder="Service style, menu preferences, timing, or any special requirements"></textarea></label>
+          <button class="button" type="submit">Prepare my enquiry <span aria-hidden="true">↗</span></button>
+          <div class="brief-result" id="brief-result" aria-live="polite">
+            <strong>Your event brief is ready</strong><p>Copy it below, then send it to Cuisine Efficace on Instagram. We don’t store form details on this demo site.</p>
+            <textarea id="brief-text" readonly aria-label="Copyable event enquiry brief"></textarea>
+            <button class="button" type="button" id="copy-brief">Copy event brief</button>
+            <a class="button" href="https://www.instagram.com/cuisineefficace/" target="_blank" rel="noopener noreferrer">Open Instagram <span aria-hidden="true">↗</span></a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="wrap credential">
+      <span class="credential-seal" aria-hidden="true">CE</span>
+      <p><strong>Offshore-ready credentials</strong>DPR licence certified, as stated by Cuisine Efficace.</p>
+    </section>
+
+    <section class="contact reveal" id="contact">
+      <div class="wrap contact-inner">
+        <div>
+          <p class="eyebrow">Begin with a conversation</p>
+          <h2 class="section-title">Let’s make your occasion <em>unforgettable.</em></h2>
+          <p class="section-copy">Share the date, guest count and kind of experience you’re planning. We’ll take it from there.</p>
+          <div class="contact-actions"><a class="button button-light" href="https://www.instagram.com/cuisineefficace/" target="_blank" rel="noopener noreferrer">Message us on Instagram <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <aside class="contact-note"><strong>Based in Lagos, Nigeria</strong><p>Private events · Corporate catering · Offshore catering</p><div class="contact-details"><a href="https://www.instagram.com/cuisineefficace/" target="_blank" rel="noopener noreferrer">Instagram · @cuisineefficace</a><a href="#booking">Request a catering quote</a></div></aside>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><p>© <span id="year"></span> Cuisine Efficace</p><p><a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="testimonials.html">Testimonials</a> · <a href="gallery.html">Gallery</a> · Exquisite French cuisine with an African twist · Lagos, Nigeria</p></div></footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      navigation.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    const quoteForm = document.querySelector('#quote-form');
+    const briefResult = document.querySelector('#brief-result');
+    const briefText = document.querySelector('#brief-text');
+    quoteForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(quoteForm);
+      const brief = [
+        'Cuisine Efficace — Event Enquiry',
+        `Name: ${formData.get('name')}`,
+        `Email: ${formData.get('email')}`,
+        `Event type: ${formData.get('event')}`,
+        `Preferred date: ${formData.get('date')}`,
+        `Estimated guests: ${formData.get('guests') || 'To be confirmed'}`,
+        `Location: ${formData.get('location') || 'To be confirmed'}`,
+        `Event details: ${formData.get('details') || 'Please contact me to discuss.'}`
+      ].join('\n');
+      briefText.value = brief;
+      briefResult.classList.add('is-visible');
+      briefResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    document.querySelector('#copy-brief').addEventListener('click', async (event) => {
+      try {
+        await navigator.clipboard.writeText(briefText.value);
+        event.currentTarget.textContent = 'Copied';
+      } catch {
+        briefText.select();
+        document.execCommand('copy');
+        event.currentTarget.textContent = 'Brief selected — copy it';
+      }
+    });
+    const topbar = document.querySelector('.topbar');
+    const updateHeader = () => topbar.classList.toggle('is-scrolled', window.scrollY > 32);
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+      document.querySelectorAll('.reveal, .service-card, .occasion-card').forEach((element, index) => {
+        element.classList.add('reveal');
+        element.style.transitionDelay = `${(index % 3) * 90}ms`;
+        revealObserver.observe(element);
+      });
+    } else {
+      document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>
